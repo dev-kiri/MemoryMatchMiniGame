@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="ca">
+<html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -16,33 +16,33 @@
 
       <!-- Sidebar with options -->
       <aside class="sidebar">
-        <h2>Opcions</h2>
+        <h2>Options</h2>
 
         <!-- Theme selection -->
         <div class="option">
-          <label for="theme">Temàtica:</label>
+          <label for="theme">Theme:</label>
           <select id="theme">
             <option value="animals">Animals</option>
-            <option value="space">Espai</option>
+            <option value="space">Space</option>
           </select>
         </div>
 
         <!-- Difficulty selection -->
         <div class="option">
-          <label for="difficulty">Dificultat:</label>
+          <label for="difficulty">Difficulty:</label>
           <select id="difficulty">
-            <option value="1">Fàcil</option>
-            <option value="2">Mitjà</option>
-            <option value="3">Difícil</option>
+            <option value="1">Easy</option>
+            <option value="2">Medium</option>
+            <option value="3">Hard</option>
             <option value="4">Expert</option>
-            <option value="5">Llegendari</option>
+            <option value="5">Legendary</option>
           </select>
         </div>
 
         <!-- Extreme mode -->
         <div class="option left checkbox">
           <input type="checkbox" id="extreme-mode" />
-          <label for="extreme-mode">Mode Extrem</label>
+          <label for="extreme-mode">Extreme Mode</label>
         </div>
         
         <!-- Button to start the match -->
@@ -77,7 +77,7 @@
         <h2 class="modal-title"></h2>
         <p class="score"></p>
         <p class="funfact"></p>
-        <button id="replay-btn" class="replay-btn">Torna a jugar</button>
+        <button id="replay-btn" class="replay-btn">Play again</button>
       </div>
     </div>
 
@@ -85,18 +85,18 @@
     <div id="restartModal" class="end-modal">
       <div class="modal-content">
         <button class="close-btn">✖</button>
-        <h2 class="modal-title">Reiniciar partida</h2>
-        <p>Ja tens una partida en curs. Vols començar de nou?</p>
+        <h2 class="modal-title">Restart match</h2>
+        <p>You already have a match in progress. Do you want to start over?</p>
 
         <!-- Extreme mode option when restarting -->
         <div class="option checkbox">
           <input type="checkbox" id="extreme-restart" />
-          <label for="extreme-restart">Mode Extrem</label>
+          <label for="extreme-restart">Extreme Mode</label>
         </div>
 
         <div class="modal-actions">
-          <button id="confirm-restart" class="replay-btn">Sí, reiniciar</button>
-          <button id="cancel-restart" class="replay-btn cancel">Cancelar</button>
+          <button id="confirm-restart" class="replay-btn">Yes, restart</button>
+          <button id="cancel-restart" class="replay-btn cancel">Cancel</button>
         </div>
       </div>
     </div>

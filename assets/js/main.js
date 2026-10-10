@@ -415,26 +415,26 @@ function checkWin() {
 
 // --- FUN FACTS ---
 const funFacts = [
-  "Els pops tenen tres cors.",
-  "Saturn podria flotar en aigua per la seva baixa densitat.",
-  "Els dofins es criden entre ells pel seu nom.",
-  "Les girafes no tenen cordes vocals.",
-  "L'espai olora a metall calent i carn a la brasa.",
-  "Els pandas passen més de 12 hores al dia menjant.",
-  "A Júpiter plouen diamants.",
-  "Els mussols poden girar el cap gairebé 270 graus.",
-  "Alguns peixos poden canviar de sexe de forma natural.",
-  "El cor humà batega més de 100.000 vegades al dia.",
-  "El cervell humà té aproximadament 86 mil milions de neurones, però el que realment determina la intel·ligència és com es connecten entre elles.",
-  "Les estrelles que veus al cel podrien ja no existir: algunes estan tan lluny que la seva llum triga milers d'anys a arribar-nos.",
-  "Un núvol mitjà pesa més de 500 tones, però flota perquè l'aire calent el sosté.",
-  "Els camaleons no canvien de color només per camuflatge, també per expressar emocions o regular la seva temperatura corporal.",
-  "Quan mires l'espai, literalment veus el passat: la llum de les galàxies llunyanes ens mostra com eren fa milions d'anys.",
-  "Els pops poden obrir pots des de dins, resoldre trencaclosques i fins i tot escapar d'aquaris. Són els genis del mar.",
-  "L'ADN humà i el d'un plàtan comparteixen aproximadament un 60% de similitud genètica.",
-  "En el buit de l'espai, el so no pot viatjar, per això mai sentiries una explosió encara que passés davant teu.",
-  "Les balenes blaves poden comunicar-se a centenars de quilòmetres gràcies a sons de baixa freqüència que l'oïda humana no percep.",
-  "Les estrelles de mar no tenen cervell, però sí un sistema nerviós complex que els permet coordinar perfectament els seus moviments."
+  "Octopuses have three hearts.",
+  "Saturn could float in water because of its low density.",
+  "Dolphins call each other by name.",
+  "Giraffes have no vocal cords.",
+  "Space smells like hot metal and grilled meat.",
+  "Pandas spend more than 12 hours a day eating.",
+  "It rains diamonds on Jupiter.",
+  "Owls can turn their heads almost 270 degrees.",
+  "Some fish can naturally change sex.",
+  "The human heart beats more than 100,000 times a day.",
+  "The human brain has roughly 86 billion neurons, but what really determines intelligence is how they connect to each other.",
+  "The stars you see in the sky may no longer exist: some are so far away that their light takes thousands of years to reach us.",
+  "An average cloud weighs more than 500 tons, but it floats because warm air holds it up.",
+  "Chameleons don't change color just for camouflage; they also do it to express emotions or regulate their body temperature.",
+  "When you look at space, you literally see the past: the light from distant galaxies shows us how they were millions of years ago.",
+  "Octopuses can open jars from the inside, solve puzzles, and even escape from aquariums. They are the geniuses of the sea.",
+  "Human DNA and a banana's share roughly 60% genetic similarity.",
+  "In the vacuum of space, sound cannot travel, so you would never hear an explosion even if it happened right in front of you.",
+  "Blue whales can communicate across hundreds of kilometers thanks to low-frequency sounds that the human ear cannot perceive.",
+  "Starfish have no brain, but they do have a complex nervous system that lets them coordinate their movements perfectly."
 ];
 
 // --- END MODAL ---
@@ -452,12 +452,12 @@ const closeBtn = modal.querySelector(".close-btn");
  * @param {number} maxScore - maximum score
  */
 function showEndModal(won, score, maxScore) {
-  modalTitle.textContent = won ? "HAS GUANYAT!" : "HAS PERDUT (temps esgotat)";
+  modalTitle.textContent = won ? "YOU WON!" : "YOU LOST (time's up)";
   modalTitle.className = `modal-title ${won ? "win" : "lose"}`;
   modalScore.textContent = `${score}/${maxScore}`;
   modalFact.textContent = won
-    ? `Dada curiosa: ${funFacts[Math.floor(Math.random() * funFacts.length)]}`
-    : "Potser tinguis més sort la propera vegada 😅";
+    ? `Fun fact: ${funFacts[Math.floor(Math.random() * funFacts.length)]}`
+    : "Maybe you'll have better luck next time 😅";
   replayBtn.style.display = won ? "none" : "inline-block";
   modal.classList.add("show");
 }
@@ -490,27 +490,27 @@ function updateModeDescription() {
 
   switch (difficulty) {
     case 1:
-      description = 'En mode Fàcil tens 5 minuts per completar les parelles. Ideal per practicar sense pressió.';
+      description = 'In Easy mode you have 5 minutes to complete the pairs. Ideal for practicing without pressure.';
       break;
     case 2:
-      description = 'En mode Mitjà disposes de 4 minuts. Dificultat moderada i pressió lleu.';
+      description = 'In Medium mode you have 4 minutes. Moderate difficulty and light pressure.';
       break;
     case 3:
-      description = 'En mode Difícil tens 3 minuts. La memòria serà clau per completar les parelles.';
+      description = 'In Hard mode you have 3 minutes. Memory will be key to completing the pairs.';
       break;
     case 4:
-      description = 'En mode Expert només tens 2 minuts. Cada error pot ser crucial.';
+      description = 'In Expert mode you only have 2 minutes. Every mistake can be crucial.';
       break;
     case 5:
-      description = 'En mode Llegendari només tens 1 minut. Precisió màxima requerida.';
+      description = 'In Legendary mode you only have 1 minute. Maximum precision required.';
       break;
     default:
-      description = 'Selecciona una dificultat per veure la descripció.';
+      description = 'Select a difficulty to see the description.';
       break;
   }
 
   if (isExtreme) {
-    description += '<br><br> ⚠️ En mode Extrem, cada error restarà temps progressivament!';
+    description += '<br><br> ⚠️ In Extreme mode, every mistake will subtract time progressively!';
   }
 
   modeDescription.innerHTML = description;
