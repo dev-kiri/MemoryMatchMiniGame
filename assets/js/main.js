@@ -149,6 +149,7 @@ function startGame(forceRestart = false) {
   // Display "Stop/Pause Match" Buttons
   pauseBtnDisplay = true;
   pauseBtn.style.opacity = "100";
+  pauseBtn.style.cursor = "pointer";
   pauseBtn.onclick = () => {
     if (gamePaused) {
       resumeGame();
@@ -159,6 +160,7 @@ function startGame(forceRestart = false) {
   
   stopBtnDisplay = true;
   stopBtn.style.opacity = "100";
+  stopBtn.style.cursor = "pointer";
   stopBtn.onclick = stopGame;
   
   // Block difficulty changes & extrem mode
@@ -261,6 +263,8 @@ function stopGame() {
   pauseBtn.textContent = "Pause Match";
   pauseBtn.style.opacity = "0";
   stopBtn.style.opacity = "0";
+  pauseBtn.style.cursor = "default";
+  stopBtn.style.cursor = "default";
   startBtn.textContent = "Start Match";
 
   // Hide modals
@@ -537,6 +541,8 @@ function endGame(won) {
   // Hide "Pause/Stop Match" buttons when the game ends (win or lose)
   pauseBtn.style.opacity = "0";
   stopBtn.style.opacity = "0";
+  pauseBtn.style.cursor = "default";
+  stopBtn.style.cursor = "default";
   pauseBtn.textContent = "Pause Match";
 
   const allCards = document.querySelectorAll(".carta");

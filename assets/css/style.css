@@ -136,6 +136,7 @@ button {
 
 button.pause {
   opacity: 0;
+  cursor: default;
   background-color: #df7c31;
 } button.pause:hover {
   background: #804007;
@@ -143,6 +144,7 @@ button.pause {
 
 button.stop {
   opacity: 0;
+  cursor: default;
   background-color: #ff5050;
 } button.stop:hover {
   background: #720305;
