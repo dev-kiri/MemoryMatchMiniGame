@@ -8,17 +8,17 @@
     <link rel="shortcut icon" href="assets/img/favIco.webp" type="image/x-icon">
   </head>
   <body>
-    <!-- Overlay difuminat de fons -->
+    <!-- Blurred background overlay -->
     <div id="overlay"></div>
 
-    <!-- Contenidor principal del joc -->
+    <!-- Main game container -->
     <main class="game-container">
 
-      <!-- Barra lateral amb opcions -->
+      <!-- Sidebar with options -->
       <aside class="sidebar">
         <h2>Opcions</h2>
 
-        <!-- Selecció de temàtica -->
+        <!-- Theme selection -->
         <div class="option">
           <label for="theme">Temàtica:</label>
           <select id="theme">
@@ -27,7 +27,7 @@
           </select>
         </div>
 
-        <!-- Selecció de dificultat -->
+        <!-- Difficulty selection -->
         <div class="option">
           <label for="difficulty">Dificultat:</label>
           <select id="difficulty">
@@ -39,18 +39,18 @@
           </select>
         </div>
 
-        <!-- Mode extrem -->
+        <!-- Extreme mode -->
         <div class="option left checkbox">
           <input type="checkbox" id="extreme-mode" />
           <label for="extreme-mode">Mode Extrem</label>
         </div>
         
-        <!-- Botó per iniciar partida -->
+        <!-- Button to start the match -->
         <button id="start-btn" class="start">Start Match</button>
         <button id="pause-btn" class="pause">Pause Match</button>
         <button id="stop-btn" class="stop">Stop Match</button>
         
-        <!-- Descripció del mode seleccionat -->
+        <!-- Description of the selected mode -->
         <div id="mode-description" class="mode-description"></div>
       
         <!-- DEV Ink -->
@@ -59,7 +59,7 @@
         </a>
       </aside>
 
-      <!-- Secció amb la taula de cartes i timer -->
+      <!-- Section with the card board and timer -->
       <section class="board-wrapper">
         <div class="timer-container">
           <div id="timer">00:00</div>
@@ -70,7 +70,7 @@
 
     </main>
 
-    <!-- Modal de final de partida -->
+    <!-- End-of-game modal -->
     <div id="endModal" class="end-modal">
       <div class="modal-content">
         <button class="close-btn">✖</button>
@@ -81,14 +81,14 @@
       </div>
     </div>
 
-    <!-- Modal de confirmació de reinici -->
+    <!-- Restart confirmation modal -->
     <div id="restartModal" class="end-modal">
       <div class="modal-content">
         <button class="close-btn">✖</button>
         <h2 class="modal-title">Reiniciar partida</h2>
         <p>Ja tens una partida en curs. Vols començar de nou?</p>
 
-        <!-- Opció de mode extrem al reiniciar -->
+        <!-- Extreme mode option when restarting -->
         <div class="option checkbox">
           <input type="checkbox" id="extreme-restart" />
           <label for="extreme-restart">Mode Extrem</label>
@@ -101,7 +101,7 @@
       </div>
     </div>
 
-    <!-- Script principal del joc -->
+    <!-- Main game script -->
     <script src="assets/js/main.js"></script>
   </body>
 </html>

@@ -1,60 +1,74 @@
-# Joc de Memòria 🧠
+# Memory Game 🧠
 
-## Descripció
+## Description
 
-Aquest és un joc de memòria clàssic amb un tauler de 6x4 caselles i 12 parelles d’imatges iguals.  
-Les caselles estan tapades i es destapen de dues en dues. Si coincideixen, queden visibles; si no, es tornen a tapar després d’1 segon.  
+This is a classic memory game with a 6x4 board and 12 pairs of identical images.  
+The cards start face down and are flipped two at a time. If they match, they stay visible; if not, they are flipped back after 1 second.  
 
-Inclou 5 nivells de dificultat amb temps límit diferent segons el nivell seleccionat i un mode extrem amb penalitzacions per errors.
-
----
-
-## Requisits
-
-- Navegador modern (Chrome, Firefox, Edge, Safari)  
-- Connexió a Internet només si el joc utilitza recursos externs (imatges en línia)
+It includes 5 difficulty levels, each with a different time limit, and an extreme mode with penalties for mistakes.
 
 ---
 
-## Instal·lació
+## Requirements
 
-1. Descarrega els fitxers del joc.  
-2. Desa’ls en una carpeta local.  
-3. Obre el fitxer `index.html` amb el teu navegador.
+- Modern browser (Chrome, Firefox, Edge, Safari)  
+- Internet connection only if the game uses external resources (online images)
 
 ---
 
-## Com jugar
+## Installation
 
-1. Prem el botó **Inici** per començar.  
-2. Tria el nivell de dificultat i si vols activar el **mode extrem**.  
-3. Destapa 2 caselles per torn.  
-4. Les caselles coincidents queden visibles; les que no coincideixen es tapen després d’1 segon.  
-5. L’objectiu és descobrir totes les parelles abans que s’acabi el temps.
+1. Download the game files.  
+2. Save them in a local folder.  
+3. Open the `index.html` file in your browser.
+
+---
+
+## How to play
+
+1. Choose the theme, the difficulty level, and whether you want to enable **extreme mode**.  
+2. Press the **Start Match** button to begin.  
+3. Flip 2 cards per turn.  
+4. Matching cards stay visible; those that don't match are flipped back after 1 second.  
+5. The goal is to find all the pairs before time runs out.
 
 ---
 
 ## Controls
 
-- **Botó Inici:** Comença o reinicia el joc.  
-- **Click a les caselles:** Destapa-les i comprova si coincideixen.  
-- **Selecció de tema:** Canvia l’aspecte de les cartes i el fons del joc.  
-- **Mode extrem:** Cada error restarà temps addicional segons la dificultat.
+- **Start Match button:** Starts the game. Once a match is in progress, it becomes **Restart Match**.  
+- **Pause Match / Resume Match button:** Pauses the current match and resumes it later. While paused, the timer stops and the cards cannot be flipped.  
+- **Stop Match button:** Stops the current match and returns to the initial view with the preview cards.  
+- **Clicking the cards:** Flips them and checks whether they match.  
+- **Theme selection:** Changes the look of the cards and the game background.  
+- **Extreme mode:** Each mistake subtracts additional time depending on the difficulty.
 
 ---
 
-## Característiques addicionals
+## Pausing, restarting, and stopping a match
 
-- Modal de final de partida amb puntuació i dada curiosa aleatòria.  
-- Efectes visuals quan queda poc temps.  
-- Sistema de penalitzacions opcional en mode extrem.  
+Once a match has started, the **Pause Match** and **Stop Match** buttons appear next to the start button.
+
+- **Pause:** Press **Pause Match** to freeze the match. The timer stops, and if two non-matching cards were waiting to be flipped back, that delay is also frozen. Press **Resume Match** to continue exactly where you left off.  
+- **Restart:** Press **Restart Match** to start over. A confirmation window will ask you whether you really want to begin a new match, and lets you turn extreme mode on or off before restarting. If you cancel, the current match carries on.  
+- **Stop:** Press **Stop Match** to end the current match without finishing it. The board goes back to the preview cards and the options are unlocked again.
+
+While a match is in progress, the theme, difficulty, and extreme mode options are locked. To change them, stop the match first (or choose a new extreme mode setting when restarting).
 
 ---
 
-## Contribució
+## Additional features
 
-Si vols millorar el joc, pots:
+- End-of-game modal with the score and a random fun fact.  
+- Visual effects when time is running low.  
+- Optional penalty system in extreme mode.  
 
-- Afegir més temes i imatges.  
-- Afegir sons o animacions.  
-- Millorar l’adaptació a dispositius mòbils.  
+---
+
+## Contributing
+
+If you want to improve the game, you can:
+
+- Add more themes and images.  
+- Add sounds or animations.  
+- Improve adaptation to mobile devices.

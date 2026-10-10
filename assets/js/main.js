@@ -1,5 +1,5 @@
 /**
- * Temes i imatges per al joc de memòria
+ * Themes and images for the memory game
  */
 const themes = {
   animals: [
@@ -15,14 +15,14 @@ const themes = {
 };
 
 /**
- * Fons segons el tema
+ * Background according to the theme
  */
 const backgrounds = {
   animals: 'url(assets/img/bg-forest.webp)',
   space: 'url(assets/img/bg-space.webp)'
 };
 
-// --- ELEMENTS DOM ---
+// --- DOM ELEMENTS ---
 const board = document.getElementById('board');
 const timerEl = document.getElementById('timer');
 const themeSelect = document.getElementById('theme');
@@ -31,9 +31,9 @@ const startBtn = document.getElementById('start-btn');
 const pauseBtn = document.getElementById('pause-btn');
 const stopBtn = document.getElementById('stop-btn');
 const overlay = document.getElementById('overlay');
-const penaltyCheckbox = document.getElementById('penalty'); // checkbox per penalitzacions
+const penaltyCheckbox = document.getElementById('penalty'); // checkbox for penalties
 
-// --- VARIABLES DEL JOC ---
+// --- GAME VARIABLES ---
 let firstCard = null;
 let secondCard = null;
 let lockBoard = false;
@@ -54,7 +54,7 @@ let stopBtnDisplay = false;
 let flipTimeoutRemaining = 0;
 let flipTimeoutStartedAt = 0;
 
-// --- EFECTE "+ TEMPS" ---
+// --- "+ TIME" EFFECT ---
 function showTimeChange(segons) {
   const span = document.createElement('span');
   span.classList.add('time-added', 'show');
@@ -65,17 +65,16 @@ function showTimeChange(segons) {
   setTimeout(() => span.remove(), 1500);
 }
 
-// --- PREVIEW DE CARTES I FONS ---
+// --- CARD PREVIEW AND BACKGROUND ---
 themeSelect.addEventListener('change', () => {
   const theme = themeSelect.value;
   document.body.style.backgroundImage = backgrounds[theme];
   mostrarCartesPreview(theme);
 });
 
-startBtn.addEventListener('click', () => startGame());
-
+startBtn.addEventListener('click', startGame);
 /**
- * Mostra cartes de vista prèvia segons el tema seleccionat
+ * Shows preview cards according to the selected theme
  * @param {string} theme
  */
 function mostrarCartesPreview(theme) {
@@ -91,11 +90,11 @@ function mostrarCartesPreview(theme) {
 }
 
 /**
- * Crea una carta amb front i dors
- * @param {string} imgSrc - URL de la imatge
- * @param {number} id - identificador de la carta
- * @param {boolean} isPreview - si és carta de preview
- * @returns {HTMLElement} carta
+ * Creates a card with front and back
+ * @param {string} imgSrc - image URL
+ * @param {number} id - card identifier
+ * @param {boolean} isPreview - whether it is a preview card
+ * @returns {HTMLElement} card
  */
 function crearCarta(imgSrc, id, isPreview = false) {
   const carta = document.createElement('div');
@@ -129,7 +128,7 @@ function startGame(forceRestart = false) {
   const isExtreme = extremeCheckbox.checked;
 
   // false first execution
-  if (gameStarted && forceRestart !== true) {
+  if (gameStarted && !forceRestart) {
     openRestartModal();
     return;
   }
@@ -275,7 +274,7 @@ function stopGame() {
   resetTimer(parseInt(difficultySelect.value));
 }
 
-// --- FUNCIONS DE JOC ---
+// --- GAME FUNCTIONS ---
 function girarCarta(carta) {
   if (gamePaused || gameEnded || !gameStarted) return;
   if (lockBoard || carta.classList.contains('flip')) return;
@@ -292,7 +291,7 @@ function girarCarta(carta) {
 }
 
 /**
- * Comprova si les cartes són iguals
+ * Checks whether the cards match
  */
 function checkMatch() {
   const cardOne = firstCard;
@@ -341,7 +340,7 @@ function resetBoard() {
 }
 
 /**
- * Mezclar array
+ * Shuffle array
  */
 function shuffle(array) {
   for (let i = array.length - 1; i > 0; i--) {
@@ -401,7 +400,7 @@ function updateTimerDisplay() {
 }
 
 /**
- * Comprovar si s'han completat totes les parelles
+ * Checks whether all pairs have been completed
  */
 function checkWin() {
   const allMatched = [...document.querySelectorAll('.carta')]
@@ -410,7 +409,7 @@ function checkWin() {
   if (allMatched) endGame(true);
 }
 
-// --- DADES CURIOSOS ---
+// --- FUN FACTS ---
 const funFacts = [
   "Els pops tenen tres cors.",
   "Saturn podria flotar en aigua per la seva baixa densitat.",
@@ -434,7 +433,7 @@ const funFacts = [
   "Les estrelles de mar no tenen cervell, però sí un sistema nerviós complex que els permet coordinar perfectament els seus moviments."
 ];
 
-// --- MODAL FINAL ---
+// --- END MODAL ---
 const modal = document.getElementById("endModal");
 const modalTitle = modal.querySelector(".modal-title");
 const modalScore = modal.querySelector(".score");
@@ -443,10 +442,10 @@ const replayBtn = modal.querySelector("#replay-btn");
 const closeBtn = modal.querySelector(".close-btn");
 
 /**
- * Mostra modal de final de partida
- * @param {boolean} won - si s'ha guanyat
- * @param {number} score - puntuació actual
- * @param {number} maxScore - puntuació màxima
+ * Shows the end-of-game modal
+ * @param {boolean} won - whether the game was won
+ * @param {number} score - current score
+ * @param {number} maxScore - maximum score
  */
 function showEndModal(won, score, maxScore) {
   modalTitle.textContent = won ? "HAS GUANYAT!" : "HAS PERDUT (temps esgotat)";
@@ -467,7 +466,7 @@ replayBtn.addEventListener("click", () => {
   startGame();
 });
 
-// --- MODAL RESTART ---
+// --- RESTART MODAL ---
 const restartModal = document.getElementById("restartModal");
 const restartClose = restartModal.querySelector(".close-btn");
 const confirmRestartBtn = document.getElementById("confirm-restart");
@@ -477,7 +476,7 @@ const extremeCheckbox = document.getElementById('extreme-mode');
 const modeDescription = document.getElementById('mode-description');
 
 /**
- * Actualitza la descripció del mode segons dificultat i mode extrem
+ * Updates the mode description according to difficulty and extreme mode
  */
 function updateModeDescription() {
   const difficulty = parseInt(difficultySelect.value);
@@ -516,7 +515,7 @@ function updateModeDescription() {
 difficultySelect.addEventListener('change', updateModeDescription);
 extremeCheckbox.addEventListener('change', updateModeDescription);
 
-// Inicialitzar descripció
+// Initialize description
 updateModeDescription();
 
 function endGame(won) {
@@ -535,6 +534,11 @@ function endGame(won) {
   extremeCheckbox.disabled = false;
   themeSelect.disabled = false;
   
+  // Hide "Pause/Stop Match" buttons when the game ends (win or lose)
+  pauseBtn.style.opacity = "0";
+  stopBtn.style.opacity = "0";
+  pauseBtn.textContent = "Pause Match";
+
   const allCards = document.querySelectorAll(".carta");
   const matchedCards = [...allCards].filter(c => c.classList.contains('matched')).length;
   const score = matchedCards / 2;
@@ -549,7 +553,7 @@ function endGame(won) {
   }, 300);
 }
 
-// --- FUNCIONS MODAL RESTART ---
+// --- RESTART MODAL FUNCTIONS ---
 function openRestartModal() {
   restartModal.classList.add("show");
   extremeRestartCheckbox.checked = extremeCheckbox.checked;
@@ -577,7 +581,7 @@ function closeEndModal() {
 }
 
 /**
- * Inicialitza el joc i mostra cartes preview
+ * Initializes the game and shows preview cards
  */
 function init() {
   const theme = themeSelect.value;

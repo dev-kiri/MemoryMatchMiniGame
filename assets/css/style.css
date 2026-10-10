@@ -1,5 +1,5 @@
 /* ==========================
-   ESTILS GENERALS DEL BODY
+   GENERAL BODY STYLES
    ========================== */
 body {
   margin: 0;
@@ -12,7 +12,7 @@ body {
   transition: box-shadow 0.3s ease;
 }
 
-/* Overlay difuminat general */
+/* General blurred overlay */
 #overlay {
   position: absolute;
   width: 100%;
@@ -23,7 +23,7 @@ body {
 }
 
 /* ==========================
-   CONTENIDOR PRINCIPAL DEL JOC
+   MAIN GAME CONTAINER
    ========================== */
 .game-container {
   display: flex;
@@ -39,7 +39,7 @@ body {
 }
 
 /* ==========================
-   BARRA LATERAL / SIDEBAR
+   SIDEBAR
    ========================== */
 .sidebar {
   flex: 0.25;
@@ -76,20 +76,20 @@ body {
   gap: 10px;
 }
 
-/* === Select personalitzat sidebar === */
+/* === Custom sidebar select === */
 .sidebar select {
   width: 100%;
   padding: 10px 12px;
-  border-radius: 10px; /* cantonades rodones */
+  border-radius: 10px; /* rounded corners */
   border: 2px solid rgba(255,255,255,0.5);
   background-color: rgba(60, 60, 60, 0.9);
   color: #fff;
   font-size: 1rem;
   cursor: pointer;
-  appearance: none; /* eliminar estil per defecte del navegador */
+  appearance: none; /* remove the browser's default style */
   -webkit-appearance: none;
   -moz-appearance: none;
-  background-image: url("data:image/svg+xml;charset=US-ASCII,<svg xmlns='http://www.w3.org/2000/svg' width='16' height='16'><polygon points='0,0 16,0 8,8' fill='white'/></svg>"); /* fletxa */
+  background-image: url("data:image/svg+xml;charset=US-ASCII,<svg xmlns='http://www.w3.org/2000/svg' width='16' height='16'><polygon points='0,0 16,0 8,8' fill='white'/></svg>"); /* arrow */
   background-repeat: no-repeat;
   background-position: right 10px center;
   background-size: 12px;
@@ -103,16 +103,16 @@ body {
   outline: none;
 }
 
-/* === Opcions del select === */
+/* === Select options === */
 .sidebar select option {
   background-color: rgba(60, 60, 60, 0.95);
   color: #fff;
   padding: 5px 10px;
 }
 
-/* Ajustar el padding si vols que l’opció seleccionada no quedi enganxada a la fletxa */
+/* Adjust the padding if you don't want the selected option to sit right against the arrow */
 .sidebar select::-ms-expand {
-  display: none; /* per IE/Edge */
+  display: none; /* for IE/Edge */
 }
 
 aside button{
@@ -120,7 +120,7 @@ aside button{
 }
 
 /* ==========================
-   BOTONS
+   BUTTONS
    ========================== */
 button {
   padding: 10px;
@@ -149,7 +149,7 @@ button.stop {
 }
 
 /* ==========================
-   CONTENIDOR DE TAULA / BOARD
+   BOARD CONTAINER
    ========================== */
 .board-wrapper {
   flex: 0.75;
@@ -183,7 +183,7 @@ button.stop {
   transition: all 0.3s ease;
 }
 
-/* Animació de + temps */
+/* "+ time" animation */
 .time-added {
   position: absolute;
   right: -70px;
@@ -203,7 +203,7 @@ button.stop {
 }
 
 /* ==========================
-   DESCRIPCIÓ DEL MODE
+   MODE DESCRIPTION
    ========================== */
 .mode-description {
   margin-top: auto;
@@ -219,7 +219,7 @@ button.stop {
   flex-shrink: 0;
 }
 
-/* Scrollbar personalitzat */
+/* Custom scrollbar */
 .mode-description::-webkit-scrollbar {
   width: 6px;
 }
@@ -235,7 +235,7 @@ button.stop {
 }
 
 /* ==========================
-   TAULA / BOARD
+   BOARD
    ========================== */
 .board {
   display: grid;
@@ -248,7 +248,7 @@ button.stop {
 }
 
 /* ==========================
-   CARTES
+   CARDS
    ========================== */
 .carta {
   position: relative;
@@ -295,7 +295,7 @@ button.stop {
 }
 
 /* ==========================
-   ANIMACIONS DE PULSACIÓ SEGONS TEMPS
+   PULSE ANIMATIONS BASED ON TIME LEFT
    ========================== */
 @keyframes pulse-slow {
   0%, 100% { box-shadow: 0 0 10px 2px rgba(228, 102, 102, 0.3); }
@@ -312,7 +312,7 @@ button.stop {
   50% { box-shadow: 0 0 45px 12px rgba(255, 0, 0, 1); }
 }
 
-/* Aplicació pulsació al container i timer */
+/* Applying the pulse to the container and timer */
 .game-container.warning-slow,
 #timer.warning-slow { animation: pulse-slow 1.8s infinite ease-in-out; }
 .game-container.warning-medium,
@@ -320,14 +320,14 @@ button.stop {
 .game-container.warning-fast,
 #timer.warning-fast { animation: pulse-fast 0.45s infinite ease-in-out; }
 
-/* Cartes de vista prèvia */
+/* Preview cards */
 .carta.preview {
   pointer-events: none;
   opacity: 0.8;
   transform: rotateY(0);
 }
 
-/* Animació d'entrada */
+/* Entry animation */
 .carta.entrar {
   animation: flipIn 0.6s ease;
 }
@@ -338,7 +338,7 @@ button.stop {
 }
 
 /* ==========================
-   MODAL FINAL
+   END MODAL
    ========================== */
 .end-modal {
   position: fixed;
@@ -422,7 +422,7 @@ button.stop {
 .replay-btn.cancel { background: #444; }
 .replay-btn.cancel:hover { background: #222; }
 
-/* Estil per checkbox de mode extrem */
+/* Style for the extreme mode checkbox */
 #extreme-mode:checked + label {
   color: #ff6666;
   text-shadow: 0 0 8px #ff6666;
