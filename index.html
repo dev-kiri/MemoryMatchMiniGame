@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="ca">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Memory Match</title>
+    <link rel="stylesheet" href="assets/css/style.css" />
+    <link rel="shortcut icon" href="assets/img/favIco.webp" type="image/x-icon">
+  </head>
+  <body>
+    <!-- Overlay difuminat de fons -->
+    <div id="overlay"></div>
+
+    <!-- Contenidor principal del joc -->
+    <main class="game-container">
+
+      <!-- Barra lateral amb opcions -->
+      <aside class="sidebar">
+        <h2>Opcions</h2>
+
+        <!-- Selecció de temàtica -->
+        <div class="option">
+          <label for="theme">Temàtica:</label>
+          <select id="theme">
+            <option value="animals">Animals</option>
+            <option value="space">Espai</option>
+          </select>
+        </div>
+
+        <!-- Selecció de dificultat -->
+        <div class="option">
+          <label for="difficulty">Dificultat:</label>
+          <select id="difficulty">
+            <option value="1">Fàcil</option>
+            <option value="2">Mitjà</option>
+            <option value="3">Difícil</option>
+            <option value="4">Expert</option>
+            <option value="5">Llegendari</option>
+          </select>
+        </div>
+
+        <!-- Mode extrem -->
+        <div class="option left checkbox">
+          <input type="checkbox" id="extreme-mode" />
+          <label for="extreme-mode">Mode Extrem</label>
+        </div>
+        
+        <!-- Botó per iniciar partida -->
+        <button id="start-btn" class="start">Start Match</button>
+        <button id="pause-btn" class="pause">Pause Match</button>
+        <button id="stop-btn" class="stop">Stop Match</button>
+        
+        <!-- Descripció del mode seleccionat -->
+        <div id="mode-description" class="mode-description"></div>
+      
+        <!-- DEV Ink -->
+        <a href="https://github.com/dev-kiri" id="author">
+          <i class="author">Made by Kiri</i>
+        </a>
+      </aside>
+
+      <!-- Secció amb la taula de cartes i timer -->
+      <section class="board-wrapper">
+        <div class="timer-container">
+          <div id="timer">00:00</div>
+          <div id="time-added" class="time-added"></div>
+        </div>
+        <div id="board" class="board"></div>
+      </section>
+
+    </main>
+
+    <!-- Modal de final de partida -->
+    <div id="endModal" class="end-modal">
+      <div class="modal-content">
+        <button class="close-btn">✖</button>
+        <h2 class="modal-title"></h2>
+        <p class="score"></p>
+        <p class="funfact"></p>
+        <button id="replay-btn" class="replay-btn">Torna a jugar</button>
+      </div>
+    </div>
+
+    <!-- Modal de confirmació de reinici -->
+    <div id="restartModal" class="end-modal">
+      <div class="modal-content">
+        <button class="close-btn">✖</button>
+        <h2 class="modal-title">Reiniciar partida</h2>
+        <p>Ja tens una partida en curs. Vols començar de nou?</p>
+
+        <!-- Opció de mode extrem al reiniciar -->
+        <div class="option checkbox">
+          <input type="checkbox" id="extreme-restart" />
+          <label for="extreme-restart">Mode Extrem</label>
+        </div>
+
+        <div class="modal-actions">
+          <button id="confirm-restart" class="replay-btn">Sí, reiniciar</button>
+          <button id="cancel-restart" class="replay-btn cancel">Cancelar</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Script principal del joc -->
+    <script src="assets/js/main.js"></script>
+  </body>
+</html>
