@@ -73,5 +73,6 @@ If you want to improve the game, you can:
 - Add sounds or animations.  
 - Improve adaptation to mobile devices.
 
+---
 
-Author Name:Kiri
+Made by Kiri · [@kiri](https://instagram.com/Kiri)
