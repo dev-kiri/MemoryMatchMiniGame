@@ -72,3 +72,6 @@ If you want to improve the game, you can:
 - Add more themes and images.  
 - Add sounds or animations.  
 - Improve adaptation to mobile devices.
+
+
+Author Name:Kiri
